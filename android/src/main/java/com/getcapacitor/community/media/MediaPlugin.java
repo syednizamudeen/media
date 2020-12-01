@@ -58,7 +58,7 @@ public class MediaPlugin extends Plugin {
         JSArray albums = new JSArray();
         StringBuffer list = new StringBuffer();
 
-        String[] projection = new String[]{MediaStore.Images.ImageColumns.BUCKET_DISPLAY_NAME};
+        String[] projection = new String[] {MediaStore.Images.Media._ID, MediaStore.Images.Media.BUCKET_DISPLAY_NAME, MediaStore.Images.Media.DATE_TAKEN };
         Cursor cur = getActivity().getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, projection, null, null, null);
 
         while (cur.moveToNext()) {
